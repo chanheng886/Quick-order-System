@@ -1,4 +1,4 @@
-package com.example.backend.services;
+package com.example.backend.services.JwtService;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -61,6 +61,11 @@ public class JwtService {
 
     public boolean isTokenExpired(String token){
         return extraExpiration(token).before(new Date());
+    }
+
+    public boolean isTokenValid(String token, UserDetails userDetails){
+        final String username = extraUsername(token);
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
     public Date extraExpiration(String token){

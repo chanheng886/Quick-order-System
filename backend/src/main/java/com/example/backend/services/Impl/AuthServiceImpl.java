@@ -12,7 +12,7 @@ import com.example.backend.enums.UserRole;
 import com.example.backend.mappers.UserMapper;
 import com.example.backend.repositories.UserRepository;
 import com.example.backend.services.AuthService;
-import com.example.backend.services.JwtService;
+import com.example.backend.services.JwtService.JwtService;
 
 import lombok.RequiredArgsConstructor;
 
