@@ -1,4 +1,4 @@
-package com.example.backend.services.JwtService;
+package com.example.backend.security;
 
 import java.util.Date;
 import java.util.HashMap;

@@ -14,6 +14,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -47,6 +48,13 @@ public class User implements UserDetails {
     @Override 
     public Collection<? extends GrantedAuthority> getAuthorities(){
         return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
+    }
+
+    @PrePersist 
+    protected void onCreate(){
+        if(this.createdAt==null){
+            this.createdAt = LocalDateTime.now();
+        }
     }
 
     @Override 

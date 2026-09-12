@@ -4,6 +4,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.example.backend.dtos.RequestDTO.LoginRequestDTO;
 import com.example.backend.dtos.RequestDTO.RegisterRequestDTO;
 import com.example.backend.dtos.ResponseDTO.UserResponseDTO;
@@ -11,8 +12,8 @@ import com.example.backend.entities.User;
 import com.example.backend.enums.UserRole;
 import com.example.backend.mappers.UserMapper;
 import com.example.backend.repositories.UserRepository;
+import com.example.backend.security.JwtService;
 import com.example.backend.services.AuthService;
-import com.example.backend.services.JwtService.JwtService;
 
 import lombok.RequiredArgsConstructor;
 
